@@ -28,8 +28,8 @@ This layer depends on:
   prio: default
 ```
 
-Adding the security layer to your build
-========================================
+Adding RPi-Experiences layer to your build
+==========================================
 
 In order to use this layer, you need to make the build system aware of
 it.
