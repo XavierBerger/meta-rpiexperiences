@@ -1,4 +1,4 @@
-DESCRIPTION = ""
+DESCRIPTION = "LWP - The World-Wide Web library for Perl"
 
 SECTION = "libs"
 LICENSE = "Artistic-1.0 | GPL-1.0+"

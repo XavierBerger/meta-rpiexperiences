@@ -1,4 +1,4 @@
-DESCRIPTION = ""
+DESCRIPTION = "HTTP::Daemon - a simple http server class"
 
 SECTION = "libs"
 LICENSE = "Artistic-1.0 | GPL-1.0+"

@@ -1,4 +1,4 @@
-DESCRIPTION = ""
+DESCRIPTION = "File::Which - Perl implementation of the which utility as an API"
 
 SECTION = "libs"
 LICENSE = "Artistic-1.0 | GPL-1.0+"

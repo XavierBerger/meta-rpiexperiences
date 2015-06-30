@@ -1,4 +1,4 @@
-DESCRIPTION = ""
+DESCRIPTION = "JSON (JavaScript Object Notation) encoder/decoder"
 
 SECTION = "libs"
 LICENSE = "Artistic-1.0 | GPL-1.0+"

@@ -1,4 +1,4 @@
-DESCRIPTION = "RPi-Monitor"
+DESCRIPTION = "RPi-Monitor - Powerfull monitoring tool for embedded system"
 AUTHOR = "Xavier Berger"
 HOMEPAGE = "http://rpi-experiences.blogspot.fr"
 LICENSE = "GPLv3"
@@ -11,13 +11,13 @@ SRC_URI[md5sum] = "3eb2781f9d1fb7f7ec47121c16fd7d47"
 SRC_URI[sha256sum] = "e081ffd1439c6f490a74b96097c715d00eee85d457ae96e5058990b16c7a4d97"
 
 RDEPENDS_${PN} = "libfile-which-perl libhttp-daemon-perl libipc-sharelite-perl libjson-perl \
-				  perl-module-posix perl-module-cwd perl-module-data-dumper perl-module-bytes\
-				  perl-module-io-handle perl-module-io-socket"
+          perl-module-posix perl-module-cwd perl-module-data-dumper perl-module-bytes\
+          perl-module-io-handle perl-module-io-socket"
 
 S="${WORKDIR}/RPi-Monitor-${PV}"
 
 do_install() {
-	cd ${S}
-	install -d ${D}/usr/bin/
-	install -m 0755 ${S}/rpimonitor/rpimonitord ${D}/usr/bin/
+  cd ${S}
+  install -d ${D}/usr/bin/
+  install -m 0755 ${S}/rpimonitor/rpimonitord ${D}/usr/bin/
 }

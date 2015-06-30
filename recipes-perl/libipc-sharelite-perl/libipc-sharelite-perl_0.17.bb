@@ -1,4 +1,4 @@
-DESCRIPTION = ""
+DESCRIPTION = "IPC::ShareLite - Lightweight interface to shared memory"
 
 SECTION = "libs"
 LICENSE = "Artistic-1.0 | GPL-1.0+"
