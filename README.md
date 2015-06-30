@@ -45,6 +45,8 @@ other layers needed. e.g.:
     /path/to/meta-openembedded/meta-oe \
     /path/to/meta-openembedded/meta-perl \
     /path/to/layer/meta-rpiexperiences \
+    ...
+    "
 ```
     
 Contents and Help
