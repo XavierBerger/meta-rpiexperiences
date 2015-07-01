@@ -6,7 +6,8 @@ LICENSE = "Artistic-1.0 | GPL-1.0+"
 LIC_FILES_CHKSUM = "file://README;beginline=1584;endline=1585;md5=ece56418b0d00a071b6e5e89f1188c7e"
 
 DEPENDS += "perl "
-RDEPENDS_${PN} = "perl-module-base"
+RDEPENDS_${PN} = "perl perl-module-base perl-module-overload perl-module-bytes\
+				  perl-module-constant"
 
 SRC_URI = "http://search.cpan.org/CPAN/authors/id/M/MA/MAKAMAKA/JSON-${PV}.tar.gz"
 

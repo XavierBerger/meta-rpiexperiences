@@ -1,6 +1,3 @@
-Work in progress
-================
-
 meta-rpiexperiences
 ===================
 

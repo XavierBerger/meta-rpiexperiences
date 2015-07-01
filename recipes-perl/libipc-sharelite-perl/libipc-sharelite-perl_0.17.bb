@@ -6,7 +6,7 @@ LICENSE = "Artistic-1.0 | GPL-1.0+"
 LIC_FILES_CHKSUM = "file://README;beginline=15;endline=16;md5=2e544ca0be03e069a3929a04e32af884"
 
 DEPENDS += "perl "
-RDEPENDS_${PN} += " perl-module-subs perl-module-dynaloader perl-module-autoloader "
+RDEPENDS_${PN} = "perl perl-module-subs perl-module-dynaloader perl-module-autoloader "
 
 SRC_URI = "http://search.cpan.org/CPAN/authors/id/A/AN/ANDYA/IPC-ShareLite-${PV}.tar.gz"
 

@@ -6,6 +6,7 @@ LICENSE = "Artistic-1.0 | GPL-1.0+"
 LIC_FILES_CHKSUM = "file://README;beginline=54;endline=55;md5=da89af04272cf2e195e17848a2af70e3"
 
 DEPENDS += "perl "
+RDEPENDS_${PN} = "perl perl-module-file-spec"
 
 SRC_URI = "http://search.cpan.org/CPAN/authors/id/P/PE/PEREINAR/File-Which-${PV}.tar.gz"
 

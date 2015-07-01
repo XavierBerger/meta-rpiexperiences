@@ -6,6 +6,8 @@ LICENSE = "Artistic-1.0 | GPL-1.0+"
 LIC_FILES_CHKSUM = "file://README;beginline=90;endline=91;md5=d2b1a88dc9b5db3276b2450fba42a99b"
 
 DEPENDS += "perl "
+RDEPENDS_${PN} = "perl perl-module-carp liburi-perl perl-module-overload \
+				  perl-module-constant perl-module-time-local"
 
 SRC_URI = "http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/libwww-perl-${PV}.tar.gz"
 

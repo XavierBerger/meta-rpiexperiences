@@ -1,0 +1,50 @@
+ apt-get install perl
+ -> libperl5 perl
+
+ apt-get install libfile-which-perl
+ -> libfile-which-perl  perl-module-b perl-module-carp perl-module-cwd
+  perl-module-dynaloader perl-module-exporter perl-module-exporter-heavy
+  perl-module-file-spec perl-module-file-spec-unix perl-module-list-util
+  perl-module-list-util-pp perl-module-mro perl-module-overload
+  perl-module-scalar-util perl-module-scalar-util-pp perl-module-xsloader
+
+apt-get install libipc-sharelite-perl
+ -> libipc-sharelite-perl perl-module-autoloader perl-module-carp
+  perl-module-dynaloader perl-module-exporter perl-module-exporter-heavy
+  perl-module-subs
+
+apt-get install libjson-perl
+ -> libjson-perl perl-module-base perl-module-carp perl-module-exporter
+  perl-module-exporter-heavy perl-module-b perl-module-dynaloader
+  perl-module-list-util perl-module-list-util-pp perl-module-mro
+  perl-module-overload perl-module-scalar-util perl-module-scalar-util-pp
+  perl-module-xsloader perl-module-constant perl-module-bytes
+  perl-module-bytes-heavy
+
+apt-get install libwww-perl
+  -> libwww-perl perl-module-carp perl-module-exporter perl-module-exporter-heavy
+  liburi-perl perl-module-b perl-module-dynaloader perl-module-list-util
+  perl-module-list-util-pp perl-module-mro perl-module-overload
+  perl-module-scalar-util perl-module-scalar-util-pp perl-module-xsloader
+  perl-module-constant perl-module-time-local
+
+apt-get install rpimonitor
+  -> perl libfile-which-perl libipc-sharelite-perl libwww-perl
+  -> perl-module-fcntl perl-module-posix perl-module-tie-hash
+  perl-module-b-deparse perl-module-data-dumper perl-module-re
+  perl-module-term-cap perl-module-io perl-module-io-file perl-module-io-handle
+  perl-module-io-seekable perl-module-selectsaver perl-module-symbol
+  perl-module-errno perl-module-io-select perl-module-io-socket-unix
+  perl-module-socket perl-module-io-socket-inet perl-module-io-socket
+  perl-module-feature perl-module-file-glob perl-module-text-parsewords
+  perl-module-encode perl-module-encode-alias perl-module-encode-config
+  perl-module-encode-configlocal-pm perl-module-encode-encoding
+  perl-module-encode-mime-name perl-module-getopt-long perl-module-integer
+  perl-module-io-pipe perl-module-ipc-open2 perl-module-ipc-open3
+  perl-module-lib perl-module-pod-escapes perl-module-pod-inputobjects
+  perl-module-pod-parser perl-module-pod-plaintext perl-module-pod-select
+  perl-module-pod-simple perl-module-pod-simple-blackbox
+  perl-module-pod-simple-linksection perl-module-pod-simple-tiedoutfh
+  perl-module-pod-simple-transcode perl-module-pod-text perl-module-pod-usage
+  perl-module-time-hires rrdtool rrdtool-perl perl-module-sys-hostname
+  perl-module-file-basename
