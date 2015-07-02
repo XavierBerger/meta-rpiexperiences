@@ -64,7 +64,7 @@ Maintenance
 -----------
 Send pull requests, patches, comments or questions to <https://github.com/XavierBerger/meta-rpiexperiences/issues>
 
-Maintainer:    Xavier Berger <berger.xavier@gmail.com>
+Maintainer:    Xavier Berger
 
 License
 =======
