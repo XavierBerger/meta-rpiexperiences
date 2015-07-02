@@ -3,8 +3,8 @@ AUTHOR = "Xavier Berger"
 HOMEPAGE = "http://rpi-experiences.blogspot.fr"
 LICENSE = "GPLv3"
 
-SRC_URI = "https://github.com/XavierBerger/RPi-Monitor/archive/v${PV}.tar.gz\
-		   file://rpimonitor.init.patch"
+SRC_URI  = "https://github.com/XavierBerger/RPi-Monitor/archive/v${PV}.tar.gz"
+SRC_URI += "file://rpimonitor.init.patch"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=d32239bcb673463ab874e80d47fae504"
 
