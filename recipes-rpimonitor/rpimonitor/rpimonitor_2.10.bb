@@ -32,6 +32,7 @@ do_install() {
   cp ${S}/rpimonitor/daemon.conf ${D}/etc/rpimonitor/
   cp ${S}/rpimonitor/data.conf ${D}/etc/rpimonitor/
   cp -a ${S}/rpimonitor/template ${D}/etc/rpimonitor/
+  cp -a ${S}/scripts ${D}/usr/share/rpimonitor/
   cp -a ${S}/rpimonitor/web ${D}/usr/share/rpimonitor
   sed -i "s/{DEVELOPMENT}/${PV}/" ${D}/usr/share/rpimonitor/web/js/rpimonitor.js
   cd  ${D}/usr/share/rpimonitor/web
