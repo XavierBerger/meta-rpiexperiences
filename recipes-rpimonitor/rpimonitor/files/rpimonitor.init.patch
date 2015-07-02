@@ -1,5 +1,5 @@
---- a/init/init.d/rpimonitor
-+++ b/init/init.d/rpimonitor
+--- a/init/init.d/rpimonitor	2015-07-02 09:02:40.350711345 +0200
++++ b/init/init.d/rpimonitor	2015-07-02 09:15:02.710729659 +0200
 @@ -1,18 +1,4 @@
  #!/bin/sh
 -### BEGIN INIT INFO
@@ -18,16 +18,17 @@
 -
  DAEMON="/usr/bin/rpimonitord"
  PIDFILE="/var/run/rpimonitord.pid"
- 
-@@ -36,20 +22,16 @@
+ LOGFILE="/var/log/rpimonitor.log"
+@@ -37,20 +23,16 @@
      fi
    done;
  
 -  log_daemon_msg "Starting RPi-Monitor" "rpimonitord"
-+  echo "Starting RPi-Monitor" "rpimonitord"
-   nice -n 19 $DAEMON -b $PIDFILE $CONFFILE
+-  nice -n 19 $DAEMON -b $PIDFILE $CONFFILE -l $LOGFILE
 -  status=$?
 -  log_end_msg $status
++  echo "Starting RPi-Monitor" "rpimonitord"
++  nice -n 19 $DAEMON -b $PIDFILE $CONFFILE  -l $LOGFILE
  }
  
  stop() {
@@ -42,12 +43,3 @@
    rm $PIDFILE
  }
  
-@@ -66,7 +48,7 @@
-     exit 0
-   fi
-   for pid in $(cat $PIDFILE); do
--    kill -0 $pid > /dev/null 2>&1 && echo -n "[ \033[1;32mok\033[0m ]" || echo -n "[\033[31mFAIL\033[0m]";
-+    kill -0 $pid > /dev/null 2>&1 && echo -n "[ OK ]" || echo -n "[ FAILED ]";
-   done;
-   echo
- }
