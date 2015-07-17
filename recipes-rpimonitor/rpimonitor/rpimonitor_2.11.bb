@@ -11,7 +11,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=d32239bcb673463ab874e80d47fae504"
 
 #SRC_URI[md5sum] = "3eb2781f9d1fb7f7ec47121c16fd7d47"
 #SRC_URI[sha256sum] = "e081ffd1439c6f490a74b96097c715d00eee85d457ae96e5058990b16c7a4d97"
-SRCREV="da5480d3399f55ddf529e07bdd3eab0427aa7f37"
+SRCREV="a67422a75af2b0f53ec31871213b1907416f92b7"
 
 RDEPENDS_${PN} = "perl libfile-which-perl libwww-perl libipc-sharelite-perl libjson-perl \
 				  perl-module-posix perl-module-data-dumper perl-module-io-handle \
