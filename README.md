@@ -1,7 +1,7 @@
 meta-rpiexperiences
 ===================
 
-This layer provides **RPi-Monitor** moniritoring tools and its dependencies.
+This layer provides **RPi-Monitor** moniritoring tools and its dependencies for Yocto.
 
 Dependencies
 ============
