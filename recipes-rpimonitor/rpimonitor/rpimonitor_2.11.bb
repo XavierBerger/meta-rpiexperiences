@@ -21,6 +21,8 @@ RDEPENDS_${PN} = "perl libfile-which-perl libwww-perl libipc-sharelite-perl libj
 #S="${WORKDIR}/RPi-Monitor-${PV}"
 S = "${WORKDIR}/git"
 
+INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
+
 do_install() {
   cd ${S}
   mkdir -p ${D}/usr/bin/
