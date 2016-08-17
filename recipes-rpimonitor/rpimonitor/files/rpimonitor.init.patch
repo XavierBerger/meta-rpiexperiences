@@ -1,5 +1,5 @@
---- a/init/init.d/rpimonitor	2015-07-02 09:02:40.350711345 +0200
-+++ b/init/init.d/rpimonitor	2015-07-02 09:15:02.710729659 +0200
+--- a/src/etc/init.d/rpimonitor	2016-08-17 10:07:53.611847868 +0200
++++ b/src/etc/init.d/rpimonitor	2016-08-17 10:08:28.803847149 +0200
 @@ -1,18 +1,4 @@
  #!/bin/sh
 -### BEGIN INIT INFO
@@ -19,27 +19,36 @@
  DAEMON="/usr/bin/rpimonitord"
  PIDFILE="/var/run/rpimonitord.pid"
  LOGFILE="/var/log/rpimonitor.log"
-@@ -37,20 +23,16 @@
+@@ -37,16 +23,14 @@
      fi
    done;
  
--  log_daemon_msg "Starting RPi-Monitor" "rpimonitord"
+-  log_daemon_msg "Starting RPi-Monitor"
 -  nice -n 19 $DAEMON -b $PIDFILE $CONFFILE -l $LOGFILE
--  status=$?
--  log_end_msg $status
-+  echo "Starting RPi-Monitor" "rpimonitord"
-+  nice -n 19 $DAEMON -b $PIDFILE $CONFFILE  -l $LOGFILE
+-  log_end_msg $?
++  echo -n "Starting RPi-Monitor: "
++  nice -n 19 $DAEMON -b $PIDFILE $CONFFILE -l $LOGFILE && echo "OK" || echo "FAIL"
  }
  
  stop() {
    touch $PIDFILE
--  log_daemon_msg "Stopping RPi-Monitor" "rpimonitord"
-+  echo "Stopping RPi-Monitor" "rpimonitord"
-   for pid in $(cat $PIDFILE); do
-     kill -15 $pid > /dev/null 2>&1
-   done
--  status=$?
--  log_end_msg $status
+-  log_daemon_msg "Stopping RPi-Monitor"
+-  kill -15 $(cat $PIDFILE) > /dev/null 2>&1
+-  log_end_msg $?
++  echo -n "Stopping RPi-Monitor: "
++  killall -9 rpimonitord > /dev/null 2>&1 && echo "OK" || echo "FAIL"
    rm $PIDFILE
  }
  
+@@ -57,9 +41,8 @@
+ }
+ 
+ status(){
+-  log_daemon_msg "RPi-Monitor status"
+-  kill -0 $(cat $PIDFILE 2> /dev/null) > /dev/null 2>&1
+-  log_end_msg $?
++  echo -n "RPi-Monitor status: "
++  kill -0 $(cat $PIDFILE 2> /dev/null ) > /dev/null 2>&1 && echo "OK" || echo "FAIL"
+ }
+ 
+ checkroot
