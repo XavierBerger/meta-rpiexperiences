@@ -9,8 +9,8 @@ SRC_URI += "file://rpimonitor.init.patch"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=d32239bcb673463ab874e80d47fae504"
 
-SRC_URI[md5sum] = "93cb34964a9f5fe33bedca63b6d6f5d8"
-SRC_URI[sha256sum] = "4b20a26d8fa3b528e32e659884a5ab131b5fbcd11c6b0abeffb6113fac1d69fd"
+SRC_URI[md5sum] = "2112dfa008c72de758cde159dc0d46ee"
+SRC_URI[sha256sum] = "6f8b738b71527c7f3f0682a2fb537d765578719b7e570fbae3a889c774c84c4b"
 #SRCREV="8cee56ff46007247ac09e5355e3e142581c2b9ae"
 
 RDEPENDS_${PN} = "perl libfile-which-perl libwww-perl libipc-sharelite-perl libjson-perl \
