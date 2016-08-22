@@ -24,10 +24,10 @@
    done;
  
 -  log_daemon_msg "Starting RPi-Monitor"
--  nice -n 19 $DAEMON -b $PIDFILE $CONFFILE -l $LOGFILE
+-  LC_ALL=C nice -n 19 $DAEMON -b $PIDFILE $CONFFILE -l $LOGFILE
 -  log_end_msg $?
 +  echo -n "Starting RPi-Monitor: "
-+  nice -n 19 $DAEMON -b $PIDFILE $CONFFILE -l $LOGFILE && echo "OK" || echo "FAIL"
++  LC_All=C nice -n 19 $DAEMON -b $PIDFILE $CONFFILE -l $LOGFILE && echo "OK" || echo "FAIL"
  }
  
  stop() {
