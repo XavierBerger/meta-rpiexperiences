@@ -14,16 +14,16 @@ SRC_URI[sha256sum] = "b1bc7617a0e5fae6f0376bd20c92f21383f9be7982ddad079994a587c5
 #SRCREV="8cee56ff46007247ac09e5355e3e142581c2b9ae"
 
 RDEPENDS_${PN} = "perl libfile-which-perl libwww-perl libipc-sharelite-perl libjson-perl \
-				  perl-module-posix perl-module-data-dumper perl-module-io-handle \
-				  perl-module-io-socket perl-module-file-glob rrdtool-perl \
-				  perl-module-sys-hostname perl-module-file-basename"
+				          perl-module-posix perl-module-data-dumper perl-module-io-handle \
+				          perl-module-io-socket perl-module-file-glob rrdtool-perl \
+				          perl-module-sys-hostname perl-module-file-basename"
 
 S="${WORKDIR}/RPi-Monitor-${PV}"
 #S = "${WORKDIR}/git"
 
 #
 
-INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
+#INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 
 do_install() {
   cd ${S}
@@ -31,6 +31,8 @@ do_install() {
   make install
   sed -i "s/{DEVELOPMENT}/${PV}-${PR}/" ${D}/usr/bin/rpimonitord
   sed -i "s/{DEVELOPMENT}/${PV}-${PR}/" ${D}/usr/share/rpimonitor/web/js/rpimonitor.js
+  rm ${D}/usr/share/rpimonitor/scripts/sunxi_tp_temp
+  rm ${D}/usr/share/rpimonitor/scripts/sunxi-temp-daemon.sh
 }
 
 pkg_postinst_${PN}() {
