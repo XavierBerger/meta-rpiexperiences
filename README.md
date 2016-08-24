@@ -38,7 +38,6 @@ other layers needed. e.g.:
 
 ```
   BBLAYERS ?= " \
-    /path/to/oe-core/meta \
     /path/to/meta-openembedded/meta-oe \
     /path/to/meta-openembedded/meta-perl \
     /path/to/layer/meta-rpiexperiences \
