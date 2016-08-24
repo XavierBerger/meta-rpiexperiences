@@ -6,6 +6,7 @@ LICENSE = "GPLv3"
 SRC_URI  = "https://github.com/XavierBerger/RPi-Monitor/archive/v${PV}.tar.gz"
 #SRC_URI  = "git://github.com/XavierBerger/RPi-Monitor.git;protocol=git;branch=devel"
 SRC_URI += "file://rpimonitor.init.patch"
+SRC_URI += "file://Makefile.patch"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=d32239bcb673463ab874e80d47fae504"
 
@@ -21,9 +22,9 @@ RDEPENDS_${PN} = "perl libfile-which-perl libwww-perl libipc-sharelite-perl libj
 S="${WORKDIR}/RPi-Monitor-${PV}"
 #S = "${WORKDIR}/git"
 
-#
+INSANE_SKIP_${PN} += "build-deps"
 
-#INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
+INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 
 do_install() {
   cd ${S}
