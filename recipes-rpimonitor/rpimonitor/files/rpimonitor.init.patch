@@ -1,5 +1,5 @@
---- a/src/etc/init.d/rpimonitor	2016-08-17 10:07:53.611847868 +0200
-+++ b/src/etc/init.d/rpimonitor	2016-08-17 10:08:28.803847149 +0200
+--- a/src/etc/init.d/rpimonitor	2016-08-24 09:00:46.915332709 +0200
++++ b/src/etc/init.d/rpimonitor	2016-08-24 09:06:30.447325699 +0200
 @@ -1,18 +1,4 @@
  #!/bin/sh
 -### BEGIN INIT INFO
@@ -26,8 +26,8 @@
 -  log_daemon_msg "Starting RPi-Monitor"
 -  LC_ALL=C nice -n 19 $DAEMON -b $PIDFILE $CONFFILE -l $LOGFILE
 -  log_end_msg $?
-+  echo -n "Starting RPi-Monitor: "
-+  LC_All=C nice -n 19 $DAEMON -b $PIDFILE $CONFFILE -l $LOGFILE && echo "OK" || echo "FAIL"
++  echo -n "Starting RPi-Monitor"
++  LC_ALL=C nice -n 19 $DAEMON -b $PIDFILE $CONFFILE -l $LOGFILE && echo " [ OK ]" || echo " [ FAIL ]"
  }
  
  stop() {
@@ -35,20 +35,57 @@
 -  log_daemon_msg "Stopping RPi-Monitor"
 -  kill -15 $(cat $PIDFILE) > /dev/null 2>&1
 -  log_end_msg $?
-+  echo -n "Stopping RPi-Monitor: "
-+  killall -9 rpimonitord > /dev/null 2>&1 && echo "OK" || echo "FAIL"
++  echo -n "Stopping RPi-Monitor"
++  kill -15 $(cat $PIDFILE) > /dev/null 2>&1 && echo " [ OK ]" || echo " [ FAIL ]"
    rm $PIDFILE
  }
  
-@@ -57,9 +41,8 @@
+@@ -57,37 +41,8 @@
  }
  
  status(){
 -  log_daemon_msg "RPi-Monitor status"
 -  kill -0 $(cat $PIDFILE 2> /dev/null) > /dev/null 2>&1
 -  log_end_msg $?
-+  echo -n "RPi-Monitor status: "
-+  kill -0 $(cat $PIDFILE 2> /dev/null ) > /dev/null 2>&1 && echo "OK" || echo "FAIL"
+-}
+-
+-update() {
+-  log_daemon_msg "RPi-Monitor update packages status"
+-  apt-get update >/dev/null 2>&1
+-  /usr/share/rpimonitor/scripts/updatePackagesStatus.pl
+-  log_end_msg $?
+-}
+-
+-install_auto_package_status_update() {
+-  log_daemon_msg "RPi-Monitor installing automatic update for packages status"
+-
+-  cat > /etc/apt/apt.conf.d/99rpimonitor << EOF
+-# Update rpimonitor status
+-DPkg {
+-  Post-Invoke {
+-    "echo 'Update rpimonitor Packages Status' && /usr/share/rpimonitor/scripts/updatePackagesStatus.pl";
+-  };
+-};
+-EOF
+-
+-  log_end_msg $?
+-}
+-
+-remove_auto_package_status_update() {
+-  log_daemon_msg "RPi-Monitor removing automatic update for packages status"
+-  rm /etc/apt/apt.conf.d/99rpimonitor > /dev/null 2>&1
+-  log_end_msg $?
++  echo -n "RPi-Monitor status"
++  kill -0 $(cat $PIDFILE 2> /dev/null ) > /dev/null 2>&1 && echo " [ OK ]" || echo " [ FAIL ]"
  }
  
  checkroot
+@@ -114,7 +69,7 @@
+     update
+   ;;
+   *)
+-    echo "Usage: $0 {start|stop|restart|status|update|install_auto_package_status_update|remove_auto_package_status_update}"
++    echo "Usage: $0 {start|stop|restart|status}"
+   ;;
+ esac
+ 
