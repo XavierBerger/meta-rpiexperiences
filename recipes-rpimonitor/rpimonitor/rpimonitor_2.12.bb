@@ -6,15 +6,15 @@ LICENSE = "GPLv3"
 SRC_URI  = "https://github.com/XavierBerger/RPi-Monitor/archive/v${PV}.tar.gz"
 #SRC_URI  = "git://github.com/XavierBerger/RPi-Monitor.git;protocol=git;branch=devel"
 SRC_URI += "file://rpimonitor.init.patch"
-SRC_URI += "file://Makefile.patch"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=d32239bcb673463ab874e80d47fae504"
 
-SRC_URI[md5sum] = "4b418b0337ca3cad8c3e9dccd161d5e8"
-SRC_URI[sha256sum] = "b1bc7617a0e5fae6f0376bd20c92f21383f9be7982ddad079994a587c51dcb59"
-#SRCREV="8cee56ff46007247ac09e5355e3e142581c2b9ae"
+SRC_URI[md5sum] = "9ec0785a3e7f7c464410b793c6574238"
+SRC_URI[sha256sum] = "797336ebd7abbf0e635e1fbae9df6fb485112cfd916073f9b46330d7ad4636b9"
+#SRCREV="${AUTOREV}"
 
-RDEPENDS_${PN} = "perl libfile-which-perl libwww-perl libipc-sharelite-perl libjson-perl \
+RDEPENDS_${PN} = "bash \
+                  perl libfile-which-perl libwww-perl libipc-sharelite-perl libjson-perl \
 				          perl-module-posix perl-module-data-dumper perl-module-io-handle \
 				          perl-module-io-socket perl-module-file-glob rrdtool-perl \
 				          perl-module-sys-hostname perl-module-file-basename"

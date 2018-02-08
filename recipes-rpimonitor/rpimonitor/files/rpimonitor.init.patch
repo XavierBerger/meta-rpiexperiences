@@ -1,5 +1,5 @@
---- a/src/etc/init.d/rpimonitor	2016-08-24 09:00:46.915332709 +0200
-+++ b/src/etc/init.d/rpimonitor	2016-08-24 09:06:30.447325699 +0200
+--- a/src/etc/init.d/rpimonitor	2018-02-08 12:03:28.346030376 +0100
++++ b/src/etc/init.d/rpimonitor	2018-02-08 12:03:45.754928424 +0100
 @@ -1,18 +1,4 @@
  #!/bin/sh
 -### BEGIN INIT INFO
@@ -40,7 +40,7 @@
    rm $PIDFILE
  }
  
-@@ -57,37 +41,8 @@
+@@ -57,35 +41,8 @@
  }
  
  status(){
@@ -61,10 +61,8 @@
 -
 -  cat > /etc/apt/apt.conf.d/99rpimonitor << EOF
 -# Update rpimonitor status
--DPkg {
--  Post-Invoke {
+-APT::Update::Post-Invoke {
 -    "echo 'Update rpimonitor Packages Status' && /usr/share/rpimonitor/scripts/updatePackagesStatus.pl";
--  };
 -};
 -EOF
 -
@@ -80,7 +78,7 @@
  }
  
  checkroot
-@@ -114,7 +69,7 @@
+@@ -112,7 +69,7 @@
      update
    ;;
    *)
