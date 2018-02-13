@@ -36,11 +36,6 @@ do_install() {
   rm ${D}/usr/share/rpimonitor/scripts/sunxi-temp-daemon.sh
 }
 
-pkg_postinst_${PN}() {
-#!/bin/sh -e
-# reinstall the service
-update-rc.d -f rpimonitor remove
-update-rc.d -f rpimonitor defaults
-# start RPi-Monitor
-/etc/init.d/rpimonitor restart
-}
+INITSCRIPT_NAME = "rpimonitor"
+INITSCRIPT_PARAMS = "start 20 2 3 4 5 . stop 20 0 1 6 ."
+inherit update-rc.d
