@@ -1,5 +1,7 @@
---- a/src/etc/init.d/rpimonitor	2018-02-08 12:03:28.346030376 +0100
-+++ b/src/etc/init.d/rpimonitor	2018-02-08 12:03:45.754928424 +0100
+diff --git a/src/etc/init.d/rpimonitor b/src/etc/init.d/rpimonitor
+index a305ef5..172b3d3 100755
+--- a/src/etc/init.d/rpimonitor
++++ b/src/etc/init.d/rpimonitor
 @@ -1,18 +1,4 @@
  #!/bin/sh
 -### BEGIN INIT INFO
@@ -10,7 +12,7 @@
 -# Default-Stop:      0 1 6
 -# X-Interactive:     true
 -# Short-Description: RPi-Monitor daemon
--# Description:       Daemon for RPi serlf monitoring
+-# Description:       RPi-Monitor: real time monitoring for embedded devices
 -### END INIT INFO
 -
 -# Source function library.
@@ -19,7 +21,7 @@
  DAEMON="/usr/bin/rpimonitord"
  PIDFILE="/var/run/rpimonitord.pid"
  LOGFILE="/var/log/rpimonitor.log"
-@@ -37,16 +23,14 @@
+@@ -37,16 +23,14 @@ start() {
      fi
    done;
  
@@ -40,7 +42,7 @@
    rm $PIDFILE
  }
  
-@@ -57,35 +41,8 @@
+@@ -57,35 +41,8 @@ restart() {
  }
  
  status(){
@@ -78,7 +80,7 @@
  }
  
  checkroot
-@@ -112,7 +69,7 @@
+@@ -112,7 +69,7 @@ case "$1" in
      update
    ;;
    *)
