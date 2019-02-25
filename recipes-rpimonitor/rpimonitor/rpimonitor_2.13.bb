@@ -15,9 +15,9 @@ SRCREV="${AUTOREV}"
 
 RDEPENDS_${PN} = "bash \
                   perl libfile-which-perl libwww-perl libipc-sharelite-perl libjson-perl \
-				          perl-module-posix perl-module-data-dumper perl-module-io-handle \
-				          perl-module-io-socket perl-module-file-glob rrdtool-perl \
-				          perl-module-sys-hostname perl-module-file-basename libsnmp-extension-passpersist-perl"
+				  perl-module-posix perl-module-data-dumper perl-module-io-handle \
+				  perl-module-io-socket perl-module-file-glob rrdtool-perl \
+				  perl-module-sys-hostname perl-module-file-basename libsnmp-extension-passpersist-perl"
 
 #S="${WORKDIR}/RPi-Monitor-${PV}"
 S = "${WORKDIR}/git"
